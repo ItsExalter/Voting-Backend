@@ -46,3 +46,23 @@ db.users.insertOne({
   role: "admin"
 })
 ```
+## API Documentation
+
+### Authentication
+- POST /api/auth/login: Login with username and password.
+
+### Events
+- GET /api/events: List all events (Admin only).
+- POST /api/events: Create a new event (Admin only).
+- GET /api/events/active: Get active events (Public).
+- PATCH /api/events/:id/status: Update event status (Admin only).
+
+### Users
+- GET /api/users: List all users (Admin only).
+- PATCH /api/users/:id/username: Update username (Admin only).
+- PATCH /api/users/:id/role: Update user role (Admin only).
+- DELETE /api/users/:id: Delete user (Admin only).
+
+### Voting
+- POST /api/votes: Submit a vote (User only).
+- GET /api/votes/results/:eventId: Get voting results.
