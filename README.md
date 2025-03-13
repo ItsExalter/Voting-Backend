@@ -35,8 +35,8 @@ JWT_SECRET=your_jwt_secret_key
 PORT=3001
 ```
 
-## Initializing the Admin User
-To initialize the admin user in MongoDB, use the following query in MongoDB Shell (in MongoDB Compass):
+~~## Initializing the Admin User~~
+~~To initialize the admin user in MongoDB, use the following query in MongoDB Shell (in MongoDB Compass):~~
 ``` sh
 use voting-app
 
@@ -46,6 +46,13 @@ db.users.insertOne({
   role: "admin"
 })
 ```
+
+## Initializing the MongoDB Connection String:
+for string connection, you can put MONGO_URI like this in .env
+```
+MONGO_URI=mongodb+srv://new-user:x5SRnNkGDIgtZKMD@cluster0.ndgj6.mongodb.net/
+```
+
 ## API Documentation
 
 ### Authentication
