@@ -50,7 +50,7 @@ db.users.insertOne({
 ## Initializing the MongoDB Connection String:
 for string connection, you can put MONGO_URI like this in .env
 ```
-MONGO_URI=mongodb+srv://new-user:x5SRnNkGDIgtZKMD@cluster0.ndgj6.mongodb.net/
+MONGO_URI=mongodb+srv://new-user:x5SRnNkGDIgtZKMD@cluster0.ndgj6.mongodb.net/voting-db
 ```
 
 ## API Documentation
