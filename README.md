@@ -36,7 +36,7 @@ PORT=3001
 ```
 
 ## Initializing the Admin User
-To initialize the admin user in MongoDB, use the following query in MongoDB Shell:
+To initialize the admin user in MongoDB, use the following query in MongoDB Shell (in MongoDB Compass):
 ``` sh
 use voting-app
 
