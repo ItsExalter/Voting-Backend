@@ -1,9 +1,23 @@
 const request = require('supertest');
+const mongoose = require('mongoose');
 const app = require('../../server');
 const User = require('../../models/User');
 
 describe('Auth Routes', () => {
+  let server;
+
+  beforeAll(async () => {
+    await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    server = app.listen(3001, () => console.log('Test server running on port 3001'));
+  });
+
+  afterAll(async () => {
+    await mongoose.connection.close();
+    server.close();
+  });
+
   beforeEach(async () => {
+    await User.deleteMany({});
     await User.create({
       username: 'testuser',
       password: 'password123',
