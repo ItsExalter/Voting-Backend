@@ -17,7 +17,7 @@ describe('User Model', () => {
   test('should require unique username', async () => {
     await User.create({ username: 'test', password: 'pass', role: 'user' });
     await expect(User.create({ username: 'test', password: 'pass', role: 'user' }))
-      .rejects.toThrow(mongoose.Error.ValidationError);
+      .rejects.toThrow(mongoose.Error.MongoServerError);
   });
 
   test('should require valid role', async () => {

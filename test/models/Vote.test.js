@@ -1,6 +1,7 @@
 const Vote = require('../../models/Vote');
 const Event = require('../../models/Event');
 const User = require('../../models/User');
+const mongoose = require('mongoose');
 
 describe('Vote Model', () => {
   test('should create vote with required fields', async () => {

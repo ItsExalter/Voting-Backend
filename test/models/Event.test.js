@@ -1,5 +1,6 @@
 const Event = require('../../models/Event');
 const User = require('../../models/User');
+const mongoose = require('mongoose');
 
 describe('Event Model', () => {
   test('should create event with required fields', async () => {
