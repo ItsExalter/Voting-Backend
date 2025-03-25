@@ -11,15 +11,9 @@ const eventRoutes = require('./routes/event');
 const app = express();
 
 // Database connection
-const dbConnection = mongoose.createConnection(process.env.MONGO_URI);
-
-dbConnection.on('connected', () => {
-  console.log('Connected to MongoDB');
-});
-
-dbConnection.on('error', (err) => {
-  console.error(err);
-});
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error(err));
 
 // Middleware
 app.use(cors());
@@ -44,5 +38,3 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-module.exports = { app };
